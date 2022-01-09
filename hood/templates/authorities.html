@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 top-div" style="margin-top:40px;">
+      <h1 style="color:black;text-align:center;">Authorities</h1>
+
+    </div>
+  </div>
+
+<div class="row">
+  {% for authority in authorities %}
+  <div class="col-md-4">
+  <div class="card" style="width: 20rem;width: 20rem;margin-top:10px; ">
+  <div class="card-body">
+    <h4 class="card-title" data-toggle="modal" data-target="#{{authority.id}}">{{authority.name}}</h4>
+    <p>Phone Number: {{authority.contact}}</p>
+    <p>Address: {{authority.address}}</p>
+  </div>
+</div>
+</div>
+{% endfor %}
+</div>
+</div>
+<style>
+  body{
+    background-image: url(https://images.pexels.com/photos/3113541/pexels-photo-3113541.png?auto=compress&cs=tinysrgb&dpr=1&w=500);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+p,h4{
+  color: black;
+  margin-top: 50px;
+  font-weight: bolder;
+  text-align: center;
+  font-size: 25px;
+}
+
+
+</style>
+{% endblock %}
